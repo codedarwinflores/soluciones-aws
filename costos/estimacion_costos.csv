@@ -1,0 +1,33 @@
+categoria,servicio,configuracion,costo_mensual_usd
+Cómputo,Amazon ECS + Fargate — API Laravel,"1 vCPU / 2 GB por tarea; mín. 3 tareas 24/7, hasta 30 los lunes (10x)",158.75
+Cómputo,Amazon ECS + Fargate — Portal del paciente (Next.js),"0.5 vCPU / 1 GB; mín. 2 tareas, hasta 20 los lunes",52.92
+Cómputo,Amazon ECS + Fargate — Dashboard del médico (Next.js),"0.5 vCPU / 1 GB; mín. 2 tareas, hasta 6 los lunes",32.26
+Cómputo,Amazon ECS + Fargate — Worker de notificaciones,0.5 vCPU / 1 GB; 2 tareas 24/7 consumiendo SQS,28.84
+Cómputo,Amazon ECS + Fargate — Tarea de reportes,2 vCPU / 4 GB; ~20 min por semana (EventBridge Scheduler),0.11
+Cómputo,Amazon ECR,10 GB de imágenes Docker,1.0
+Red,Elastic Load Balancing (ALB),"1 ALB en 2 AZ, ~3 LCU promedio",33.95
+Red,NAT Gateway,"2 NAT (uno por AZ), 100 GB procesados",70.2
+Red,Amazon CloudFront,1.5 TB salida (1 TB capa gratuita) y 20 M solicitudes HTTPS (10 M gratis),53.52
+Red,AWS WAF,"1 Web ACL, 6 reglas/grupos administrados, 20 M solicitudes",23.0
+Red,Amazon Route 53,"1 zona hospedada, 10 M consultas, 2 health checks",5.5
+Red,Transferencia entre AZ,~200 GB/mes entre zonas de disponibilidad,4.0
+Datos,Amazon RDS for MySQL — principal Multi-AZ,"db.m6g.large Multi-AZ, 200 GB gp3, backups 30 días",286.92
+Datos,Amazon RDS for MySQL — réplica de lectura,"db.t4g.medium Single-AZ, 200 GB gp3 (consultas de reportes)",70.45
+Datos,Amazon ElastiCache (Valkey),2 nodos cache.t4g.small (primario + réplica),37.38
+Datos,Amazon S3 — archivos médicos,"2 TB Standard, versionado + Object Lock, 2 M PUT / 10 M GET",61.1
+Datos,Amazon S3 — réplica entre regiones (us-west-2),2 TB en Standard-IA + 150 GB/mes replicados,28.6
+Datos,Amazon S3 — estáticos y reportes,50 GB Standard,1.15
+Datos,AWS Backup,Copia cross-region de snapshots RDS (200 GB),23.0
+Aplicación,Amazon Chime SDK (videoconsultas),"15,000 consultas x 20 min x 2 participantes = 600,000 asistente-min",1020.0
+Aplicación,Amazon SES (correo),"200,000 correos/mes",20.0
+Aplicación,AWS End User Messaging (SMS),"6,000 SMS/mes a El Salvador (~US$0.10 c/u, tarifa variable)",600.0
+Aplicación,Amazon SQS,3 M solicitudes (1 M gratis),0.8
+Aplicación,Amazon EventBridge Scheduler,Programación semanal de reportes,0.0
+Seguridad,AWS Secrets Manager,"6 secretos con rotación, 100k llamadas",2.9
+Seguridad,AWS KMS,"3 claves administradas por el cliente, 2 M solicitudes",9.0
+Seguridad,Amazon GuardDuty,Detección de amenazas (estimado por volumen de eventos),30.0
+Seguridad,AWS CloudTrail,1 trail de eventos de administración,0.0
+Operación,Amazon CloudWatch,"50 GB logs, 100 GB retenidos, 20 alarmas, 3 dashboards",39.0
+Operación,AWS Budgets + Cost Anomaly Detection,Alertas de presupuesto,0.0
+TOTAL,Total mensual On-Demand,,2694.35
+TOTAL,Total con Savings Plan + RDS Reserved (1 año),,2545.49

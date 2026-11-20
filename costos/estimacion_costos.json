@@ -1,0 +1,195 @@
+{
+  "region": "us-east-1",
+  "rows": [
+    {
+      "categoria": "Cómputo",
+      "servicio": "Amazon ECS + Fargate — API Laravel",
+      "configuracion": "1 vCPU / 2 GB por tarea; mín. 3 tareas 24/7, hasta 30 los lunes (10x)",
+      "costo_mensual_usd": 158.75
+    },
+    {
+      "categoria": "Cómputo",
+      "servicio": "Amazon ECS + Fargate — Portal del paciente (Next.js)",
+      "configuracion": "0.5 vCPU / 1 GB; mín. 2 tareas, hasta 20 los lunes",
+      "costo_mensual_usd": 52.92
+    },
+    {
+      "categoria": "Cómputo",
+      "servicio": "Amazon ECS + Fargate — Dashboard del médico (Next.js)",
+      "configuracion": "0.5 vCPU / 1 GB; mín. 2 tareas, hasta 6 los lunes",
+      "costo_mensual_usd": 32.26
+    },
+    {
+      "categoria": "Cómputo",
+      "servicio": "Amazon ECS + Fargate — Worker de notificaciones",
+      "configuracion": "0.5 vCPU / 1 GB; 2 tareas 24/7 consumiendo SQS",
+      "costo_mensual_usd": 28.84
+    },
+    {
+      "categoria": "Cómputo",
+      "servicio": "Amazon ECS + Fargate — Tarea de reportes",
+      "configuracion": "2 vCPU / 4 GB; ~20 min por semana (EventBridge Scheduler)",
+      "costo_mensual_usd": 0.11
+    },
+    {
+      "categoria": "Cómputo",
+      "servicio": "Amazon ECR",
+      "configuracion": "10 GB de imágenes Docker",
+      "costo_mensual_usd": 1.0
+    },
+    {
+      "categoria": "Red",
+      "servicio": "Elastic Load Balancing (ALB)",
+      "configuracion": "1 ALB en 2 AZ, ~3 LCU promedio",
+      "costo_mensual_usd": 33.95
+    },
+    {
+      "categoria": "Red",
+      "servicio": "NAT Gateway",
+      "configuracion": "2 NAT (uno por AZ), 100 GB procesados",
+      "costo_mensual_usd": 70.2
+    },
+    {
+      "categoria": "Red",
+      "servicio": "Amazon CloudFront",
+      "configuracion": "1.5 TB salida (1 TB capa gratuita) y 20 M solicitudes HTTPS (10 M gratis)",
+      "costo_mensual_usd": 53.52
+    },
+    {
+      "categoria": "Red",
+      "servicio": "AWS WAF",
+      "configuracion": "1 Web ACL, 6 reglas/grupos administrados, 20 M solicitudes",
+      "costo_mensual_usd": 23.0
+    },
+    {
+      "categoria": "Red",
+      "servicio": "Amazon Route 53",
+      "configuracion": "1 zona hospedada, 10 M consultas, 2 health checks",
+      "costo_mensual_usd": 5.5
+    },
+    {
+      "categoria": "Red",
+      "servicio": "Transferencia entre AZ",
+      "configuracion": "~200 GB/mes entre zonas de disponibilidad",
+      "costo_mensual_usd": 4.0
+    },
+    {
+      "categoria": "Datos",
+      "servicio": "Amazon RDS for MySQL — principal Multi-AZ",
+      "configuracion": "db.m6g.large Multi-AZ, 200 GB gp3, backups 30 días",
+      "costo_mensual_usd": 286.92
+    },
+    {
+      "categoria": "Datos",
+      "servicio": "Amazon RDS for MySQL — réplica de lectura",
+      "configuracion": "db.t4g.medium Single-AZ, 200 GB gp3 (consultas de reportes)",
+      "costo_mensual_usd": 70.45
+    },
+    {
+      "categoria": "Datos",
+      "servicio": "Amazon ElastiCache (Valkey)",
+      "configuracion": "2 nodos cache.t4g.small (primario + réplica)",
+      "costo_mensual_usd": 37.38
+    },
+    {
+      "categoria": "Datos",
+      "servicio": "Amazon S3 — archivos médicos",
+      "configuracion": "2 TB Standard, versionado + Object Lock, 2 M PUT / 10 M GET",
+      "costo_mensual_usd": 61.1
+    },
+    {
+      "categoria": "Datos",
+      "servicio": "Amazon S3 — réplica entre regiones (us-west-2)",
+      "configuracion": "2 TB en Standard-IA + 150 GB/mes replicados",
+      "costo_mensual_usd": 28.6
+    },
+    {
+      "categoria": "Datos",
+      "servicio": "Amazon S3 — estáticos y reportes",
+      "configuracion": "50 GB Standard",
+      "costo_mensual_usd": 1.15
+    },
+    {
+      "categoria": "Datos",
+      "servicio": "AWS Backup",
+      "configuracion": "Copia cross-region de snapshots RDS (200 GB)",
+      "costo_mensual_usd": 23.0
+    },
+    {
+      "categoria": "Aplicación",
+      "servicio": "Amazon Chime SDK (videoconsultas)",
+      "configuracion": "15,000 consultas x 20 min x 2 participantes = 600,000 asistente-min",
+      "costo_mensual_usd": 1020.0
+    },
+    {
+      "categoria": "Aplicación",
+      "servicio": "Amazon SES (correo)",
+      "configuracion": "200,000 correos/mes",
+      "costo_mensual_usd": 20.0
+    },
+    {
+      "categoria": "Aplicación",
+      "servicio": "AWS End User Messaging (SMS)",
+      "configuracion": "6,000 SMS/mes a El Salvador (~US$0.10 c/u, tarifa variable)",
+      "costo_mensual_usd": 600.0
+    },
+    {
+      "categoria": "Aplicación",
+      "servicio": "Amazon SQS",
+      "configuracion": "3 M solicitudes (1 M gratis)",
+      "costo_mensual_usd": 0.8
+    },
+    {
+      "categoria": "Aplicación",
+      "servicio": "Amazon EventBridge Scheduler",
+      "configuracion": "Programación semanal de reportes",
+      "costo_mensual_usd": 0.0
+    },
+    {
+      "categoria": "Seguridad",
+      "servicio": "AWS Secrets Manager",
+      "configuracion": "6 secretos con rotación, 100k llamadas",
+      "costo_mensual_usd": 2.9
+    },
+    {
+      "categoria": "Seguridad",
+      "servicio": "AWS KMS",
+      "configuracion": "3 claves administradas por el cliente, 2 M solicitudes",
+      "costo_mensual_usd": 9.0
+    },
+    {
+      "categoria": "Seguridad",
+      "servicio": "Amazon GuardDuty",
+      "configuracion": "Detección de amenazas (estimado por volumen de eventos)",
+      "costo_mensual_usd": 30.0
+    },
+    {
+      "categoria": "Seguridad",
+      "servicio": "AWS CloudTrail",
+      "configuracion": "1 trail de eventos de administración",
+      "costo_mensual_usd": 0.0
+    },
+    {
+      "categoria": "Operación",
+      "servicio": "Amazon CloudWatch",
+      "configuracion": "50 GB logs, 100 GB retenidos, 20 alarmas, 3 dashboards",
+      "costo_mensual_usd": 39.0
+    },
+    {
+      "categoria": "Operación",
+      "servicio": "AWS Budgets + Cost Anomaly Detection",
+      "configuracion": "Alertas de presupuesto",
+      "costo_mensual_usd": 0.0
+    }
+  ],
+  "total": 2694.35,
+  "savings": {
+    "compute_savings_plan_1y_20pct": 54.58,
+    "rds_reserved_1y_35pct_instancias": 94.28
+  },
+  "total_optimizado": 2545.49,
+  "anual": 32332.2,
+  "anual_optimizado": 30545.88,
+  "fargate_total": 272.88,
+  "rds_total": 357.37
+}
