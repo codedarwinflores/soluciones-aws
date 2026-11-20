@@ -15,6 +15,7 @@ Propuesta de arquitectura en **Amazon Web Services** para migrar **MediConnect**
 | Diagrama editable (draw.io, íconos oficiales AWS) | [`diagrama/mediconnect-arquitectura-aws.drawio`](diagrama/mediconnect-arquitectura-aws.drawio) |
 | Estimación de costos (CSV / JSON) | [`costos/estimacion_costos.csv`](costos/estimacion_costos.csv) |
 | Script reproducible del cálculo de costos | [`costos/calculo_costos.py`](costos/calculo_costos.py) |
+| Estimación en AWS Pricing Calculator (enlace y captura) | [Enlace público](https://calculator.aws/#/estimate?id=df7356ab4e117667b5d852e69d005d81837bb747) · [`costos/aws-pricing-calculator.png`](costos/aws-pricing-calculator.png) |
 
 El reporte incluye las 8 secciones solicitadas:
 
@@ -63,7 +64,24 @@ Para regenerar el cálculo:
 python costos/calculo_costos.py
 ```
 
-> Los precios unitarios son los de lista On-Demand de AWS para us-east-1 (los mismos que usa [AWS Pricing Calculator](https://calculator.aws)). La tarifa de SMS a El Salvador varía por operador y se estimó en US$0.10 por mensaje.
+> Los precios unitarios son los de lista On-Demand de AWS para us-east-1. La tarifa de SMS a El Salvador varía por operador y se estimó en US$0.10 por mensaje.
+
+### AWS Pricing Calculator
+
+La estimación está cargada en AWS Pricing Calculator (18 entradas, enlace público válido hasta noviembre de 2027):
+
+**🔗 <https://calculator.aws/#/estimate?id=df7356ab4e117667b5d852e69d005d81837bb747>**
+
+| Concepto | USD/mes |
+|---|---|
+| Servicios cargados en la calculadora | 2,020.86 |
+| SMS a El Salvador (la calculadora no tiene tarifas SMS por país) | 600.00 |
+| GuardDuty, AWS Backup, transferencia entre AZ, ECR y tarea de reportes | 58.11 |
+| **Total conciliado** | **2,678.97** |
+
+La diferencia con el script (2,694.35) es menor al 1 %. Se debe a que la calculadora aplica capas gratuitas en dashboards y health checks, cobra el primer millón de solicitudes SQS y no incluye la transferencia de replicación de S3.
+
+![Estimación en AWS Pricing Calculator](costos/aws-pricing-calculator.png)
 
 ## 📂 Estructura
 
